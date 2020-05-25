@@ -1,0 +1,50 @@
+<div class="card-header">
+  <div class="row">
+    <div class="col-sm-6 text-left">
+      <h5 class="card-category">2019-2020 Season</h5>
+      <h2 class="card-title">
+        <!-- Search form -->
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Search Player Here"
+          aria-label="Search"
+          [(ngModel)]="input"
+          (keyup)="_api.findPlayer(input)"
+        />
+      </h2>
+    </div>
+    <div class="col-sm-6">
+      <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+        <label class="btn btn-sm btn-primary btn-simple active" id="0">
+          <input type="radio" name="options" checked="" />
+          <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
+            >Graph</span
+          >
+          <span class="d-block d-sm-none">
+            <i class="tim-icons icon-single-02"></i>
+          </span>
+        </label>
+        <label class="btn btn-sm btn-primary btn-simple" id="1">
+          <input type="radio" class="d-none d-sm-none" name="options" />
+          <span
+            class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
+            (click)="getStats()"
+            >Stats</span
+          >
+          <span class="d-block d-sm-none">
+            <i class="tim-icons icon-gift-2"></i>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<app-graph></app-graph>
+<canvas
+  id="chartBig1"
+  width="1707"
+  height="275"
+  class="chartjs-render-monitor"
+  style="display: block; height: 220px; width: 1366px;"
+></canvas>

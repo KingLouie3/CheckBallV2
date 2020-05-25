@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "checkballV2"
+    }
+  },
+  "defaultProject": "checkballV2",
+  "cli": {
+    "analytics": "9ee3c40a-c2b9-4f5c-b215-4831c094191b"
+  }
 }

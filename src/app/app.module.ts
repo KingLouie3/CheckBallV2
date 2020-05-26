@@ -9,6 +9,7 @@ import { GraphComponent } from './graph/graph.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { StatsComponent } from './stats/stats.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
       AppComponent,
       HomeComponent,
       GraphComponent,
-      SearchBarComponent
+      SearchBarComponent,
+      StatsComponent
    ],
    imports: [
       BrowserModule,

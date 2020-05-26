@@ -6,11 +6,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ApiServiceService {
 
-// tslint:disable-next-line: variable-name
 constructor(public _http: HttpClient) { }
-// tslint:disable-next-line: variable-name
+season = 2019;
 first_name: any;
-// tslint:disable-next-line: variable-name
 last_name: any;
 suggestions: any;
 url = `https://www.balldontlie.io/api/v1/players`
@@ -47,4 +45,25 @@ getStats() {
     }
 
 }
+
+    getPlayer(id, first_name, last_name) {
+    this._http
+      .get<any>(
+        `https://www.balldontlie.io/api/v1/season_averages?season=${this.season}&player_ids[]=${id}`
+      )
+      .subscribe(response => {
+        console.log(response);
+        this.first_name = first_name;
+        this.last_name = last_name;
+        response.data[0].first_name = first_name;
+        response.data[0].last_name = last_name;
+
+        
+      });
+
+  
+  }
+
+
+
 }

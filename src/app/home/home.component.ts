@@ -1,6 +1,6 @@
-import { ApiServiceService } from './../api-service.service';
+import { ApiServiceService } from '../_services/api-service.service';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -20,5 +20,9 @@ export class HomeComponent implements OnInit {
 
   getStats() {
     this._api.getStats();
+  }
+
+  findPlayer(input) {
+    this._api.findPlayer(input);
   }
 }

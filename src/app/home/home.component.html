@@ -1,17 +1,25 @@
 <div class="card-header">
   <div class="row">
     <div class="col-sm-6 text-left">
-      <h5 class="card-category">2019-2020 Season</h5>
+      <h1 class="card-title">2019-2020 Season</h1>
       <h2 class="card-title">
         <!-- Search form -->
         <input
-          class="form-control"
+          class="form-control black"
           type="text"
           placeholder="Search Player Here"
           aria-label="Search"
           [(ngModel)]="input"
           (keyup)="_api.findPlayer(input)"
         />
+        <!-- Suggestions -->
+         <div class="suggestions">
+    <div (click)="_api.getPlayer( suggestion.id, suggestion.first_name,suggestion.last_name)"
+      *ngFor="let suggestion of _api.suggestions">
+      {{suggestion.first_name}}, {{suggestion.last_name}}
+
+    </div>
+  </div>
       </h2>
     </div>
     <div class="col-sm-6">
@@ -40,6 +48,7 @@
     </div>
   </div>
 </div>
+<app-stats></app-stats>
 <app-graph></app-graph>
 <canvas
   id="chartBig1"

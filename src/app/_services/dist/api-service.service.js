@@ -9,9 +9,9 @@ exports.__esModule = true;
 exports.ApiServiceService = void 0;
 var core_1 = require("@angular/core");
 var ApiServiceService = /** @class */ (function () {
-    // tslint:disable-next-line: variable-name
     function ApiServiceService(_http) {
         this._http = _http;
+        this.season = 2019;
         this.url = "https://www.balldontlie.io/api/v1/players";
     }
     ApiServiceService.prototype.getStats = function () {
@@ -29,18 +29,30 @@ var ApiServiceService = /** @class */ (function () {
                 console.log('2nd', _this.first_name);
                 _this.last_name = response.data[0].last_name;
                 _this.suggestions = response.data.filter(function (player) {
-                    if (player.id === 666786) {
+                    if (player.id == 666786) {
                         return (player.id = 666786);
                     }
-                    else if (player.id === 666969) {
+                    else if (player.id == 666969) {
                         return (player.id = 666969);
                     }
                     return player.height_feet > 1;
                 });
-                console.log('lets see', response);
+                console.log("lets see", response);
             });
             console.log(player);
         }
+    };
+    ApiServiceService.prototype.getPlayer = function (id, first_name, last_name) {
+        var _this = this;
+        this._http
+            .get("https://www.balldontlie.io/api/v1/season_averages?season=" + this.season + "&player_ids[]=" + id)
+            .subscribe(function (response) {
+            console.log(response);
+            _this.first_name = first_name;
+            _this.last_name = last_name;
+            response.data[0].first_name = first_name;
+            response.data[0].last_name = last_name;
+        });
     };
     ApiServiceService = __decorate([
         core_1.Injectable({

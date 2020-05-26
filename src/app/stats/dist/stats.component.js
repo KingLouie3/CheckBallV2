@@ -6,28 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.HomeComponent = void 0;
+exports.StatsComponent = void 0;
 var core_1 = require("@angular/core");
-var HomeComponent = /** @class */ (function () {
+var StatsComponent = /** @class */ (function () {
     // tslint:disable-next-line: variable-name
-    function HomeComponent(_api) {
+    function StatsComponent(_api) {
         this._api = _api;
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    StatsComponent.prototype.ngOnInit = function () {
     };
-    HomeComponent.prototype.getStats = function () {
-        this._api.getStats();
+    StatsComponent.prototype.test = function () {
+        this._api.first_name = this.player;
     };
-    HomeComponent.prototype.findPlayer = function (input) {
-        this._api.findPlayer(input);
-    };
-    HomeComponent = __decorate([
+    StatsComponent = __decorate([
         core_1.Component({
-            selector: 'app-home',
-            templateUrl: './home.component.html',
-            styleUrls: ['./home.component.css']
+            selector: 'app-stats',
+            templateUrl: './stats.component.html',
+            styleUrls: ['./stats.component.css']
         })
-    ], HomeComponent);
-    return HomeComponent;
+    ], StatsComponent);
+    return StatsComponent;
 }());
-exports.HomeComponent = HomeComponent;
+exports.StatsComponent = StatsComponent;

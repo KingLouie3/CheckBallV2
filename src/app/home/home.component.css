@@ -1,0 +1,19 @@
+.suggestions {
+    border: 2px solid ;
+    background: transparent;
+    background-color: #1e1e2f
+}
+
+.suggestions > div  {
+    padding: 15px;
+    font-size: 26px;
+    color: #fff;
+    border: 1px solid #666;
+    cursor: pointer;
+
+}
+
+.suggestions > div:hover {
+    background-color: #1e4dd4;
+
+}

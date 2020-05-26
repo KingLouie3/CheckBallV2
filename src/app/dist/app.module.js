@@ -9,6 +9,7 @@ exports.__esModule = true;
 exports.AppModule = void 0;
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
+var ng2_charts_1 = require("ng2-charts");
 var app_component_1 = require("./app.component");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var home_component_1 = require("./home/home.component");
@@ -16,6 +17,7 @@ var graph_component_1 = require("./graph/graph.component");
 var http_1 = require("@angular/common/http");
 var search_bar_component_1 = require("./search-bar/search-bar.component");
 var forms_1 = require("@angular/forms");
+var stats_component_1 = require("./stats/stats.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -25,13 +27,15 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 graph_component_1.GraphComponent,
-                search_bar_component_1.SearchBarComponent
+                search_bar_component_1.SearchBarComponent,
+                stats_component_1.StatsComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 ng_bootstrap_1.NgbModule,
                 http_1.HttpClientModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                ng2_charts_1.ChartsModule
             ],
             providers: [],
             bootstrap: [

@@ -7,10 +7,12 @@ import {HttpClient} from '@angular/common/http';
 export class ApiServiceService {
 
 constructor(public _http: HttpClient) { }
+input: string;
+players = [];
 season = 2019;
-first_name: any;
-last_name: any;
-suggestions: any;
+first_name: string;
+last_name: string;
+suggestions: string;
 url = `https://www.balldontlie.io/api/v1/players`
 
 getStats() {
@@ -41,7 +43,9 @@ getStats() {
           console.log("lets see", response);
         });
 
-      console.log(player);
+        if(this.input = ""){
+            this.suggestions = null;
+        }
     }
 
 }
@@ -52,15 +56,18 @@ getStats() {
         `https://www.balldontlie.io/api/v1/season_averages?season=${this.season}&player_ids[]=${id}`
       )
       .subscribe(response => {
-        console.log(response);
         this.first_name = first_name;
         this.last_name = last_name;
         response.data[0].first_name = first_name;
         response.data[0].last_name = last_name;
+        this.players.push(response.data[0]);
+        console.log('players', this.players);
+        console.log('getplayer test', response);
 
         
       });
-
+      this.suggestions = null;
+      this.input = null;
   
   }
 

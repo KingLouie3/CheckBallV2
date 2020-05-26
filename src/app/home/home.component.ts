@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   // tslint:disable-next-line: variable-name
   constructor(public _api: ApiServiceService) { }
-  input: any;
+  input: any = this._api.input;
 
   ngOnInit() {
 
@@ -24,5 +24,9 @@ export class HomeComponent implements OnInit {
 
   findPlayer(input) {
     this._api.findPlayer(input);
+    if(input = ''){
+      this._api.suggestions = null;
+      
+    }
   }
 }

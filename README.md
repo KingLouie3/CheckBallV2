@@ -5,6 +5,6 @@
 
 [X] Push Players into suggestions
 
-[] Create Table For Stats
+[X] Create Table For Stats
 
 [] Create Graph

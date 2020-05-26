@@ -11,6 +11,7 @@ var core_1 = require("@angular/core");
 var ApiServiceService = /** @class */ (function () {
     function ApiServiceService(_http) {
         this._http = _http;
+        this.players = [];
         this.season = 2019;
         this.url = "https://www.balldontlie.io/api/v1/players";
     }
@@ -39,7 +40,9 @@ var ApiServiceService = /** @class */ (function () {
                 });
                 console.log("lets see", response);
             });
-            console.log(player);
+            if (this.input = "") {
+                this.suggestions = null;
+            }
         }
     };
     ApiServiceService.prototype.getPlayer = function (id, first_name, last_name) {
@@ -47,12 +50,16 @@ var ApiServiceService = /** @class */ (function () {
         this._http
             .get("https://www.balldontlie.io/api/v1/season_averages?season=" + this.season + "&player_ids[]=" + id)
             .subscribe(function (response) {
-            console.log(response);
             _this.first_name = first_name;
             _this.last_name = last_name;
             response.data[0].first_name = first_name;
             response.data[0].last_name = last_name;
+            _this.players.push(response.data[0]);
+            console.log('players', _this.players);
+            console.log('getplayer test', response);
         });
+        this.suggestions = null;
+        this.input = null;
     };
     ApiServiceService = __decorate([
         core_1.Injectable({

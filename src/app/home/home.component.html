@@ -13,7 +13,7 @@
           (keyup)="_api.findPlayer(input)"
         />
         <!-- Suggestions -->
-         <div class="suggestions">
+         <div *ngIf="_api.suggestions && input" class="suggestions">
     <div (click)="_api.getPlayer( suggestion.id, suggestion.first_name,suggestion.last_name)"
       *ngFor="let suggestion of _api.suggestions">
       {{suggestion.first_name}}, {{suggestion.last_name}}
@@ -48,7 +48,7 @@
     </div>
   </div>
 </div>
-<app-stats></app-stats>
+<!-- <app-stats></app-stats> -->
 <app-graph></app-graph>
 <canvas
   id="chartBig1"

@@ -12,6 +12,7 @@ var HomeComponent = /** @class */ (function () {
     // tslint:disable-next-line: variable-name
     function HomeComponent(_api) {
         this._api = _api;
+        this.input = this._api.input;
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
@@ -20,6 +21,9 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.findPlayer = function (input) {
         this._api.findPlayer(input);
+        if (input = '') {
+            this._api.suggestions = null;
+        }
     };
     HomeComponent = __decorate([
         core_1.Component({

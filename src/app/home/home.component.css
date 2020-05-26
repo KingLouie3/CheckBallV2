@@ -17,3 +17,11 @@
     background-color: #1e4dd4;
 
 }
+.form-control-lg  {
+        cursor: pointer;
+
+}
+
+.form-control :hover {
+    color: #1e4dd4;
+}

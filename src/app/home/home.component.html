@@ -13,10 +13,12 @@
           (keyup)="_api.findPlayer(input)"
         />
         <!-- Suggestions -->
-         <div *ngIf="_api.suggestions && input" class="suggestions">
-    <div (click)="_api.getPlayer( suggestion.id, suggestion.first_name,suggestion.last_name)"
-      *ngFor="let suggestion of _api.suggestions">
-      {{suggestion.first_name}}, {{suggestion.last_name}}
+         <div *ngIf="_api.suggestions && input">
+    <div  (click)="_api.getPlayer( suggestion.id, suggestion.first_name,suggestion.last_name)"
+      *ngFor="let suggestion of _api.suggestions" class="form-control form-control-lg">
+      <option>
+        {{suggestion.first_name}}, {{suggestion.last_name}}
+      </option>
 
     </div>
   </div>
